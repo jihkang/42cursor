@@ -5,7 +5,6 @@ SRC_INC = src/
 HDR_INC = inc/
 
 CFLAG = -Wall -Wextra -Werror
-
 SRC = main \
 	action \
 	argue \
@@ -26,9 +25,12 @@ $(NAME) : $(OBJS)
 clean :
 	rm -f $(OBJS)
 
-fclean : clean
+fclean :
+	make clean
 	rm -f $(NAME)
 
-re : fclean all
+re :
+	make fclean
+	make all
 
 .PHONY: all, clean, fclean, re

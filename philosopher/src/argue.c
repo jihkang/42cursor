@@ -45,7 +45,7 @@ t_mtx	*set_mutex(int num)
 
 	mtx = malloc(sizeof(t_mtx) * (num + 1));
 	i = 0;
-	while (i <= num)
+	while (i <= num + 1)
 	{
 		pthread_mutex_init(mtx + i, NULL);
 		i++;
@@ -64,7 +64,13 @@ t_share	*set_share(t_arg *arg, t_mtx *mtx, int num)
 	{
 		shr[i].l_fork = &mtx[i];
 		shr[i].r_fork = &mtx[(i + 1) % num];
+		if (i == num - 1)
+		{
+			shr[i].l_fork = &mtx[(i + 1) % num];
+			shr[i].r_fork = &mtx[i];
+		}
 		shr[i].print = &mtx[num];
+		shr[i].data_race = &mtx[num + 1];
 		shr[i].arg = arg;
 		shr[i].id = i;
 		shr[i].state = 1;

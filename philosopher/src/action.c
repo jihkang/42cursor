@@ -14,9 +14,11 @@ void	eat_meals(t_share *shr)
 {
 	print_mutex(shr->print, get_time() - shr->dur, shr->id + 1, \
 		(char *)"is eating");
+	pthread_mutex_lock(shr->data_race);
 	shr->last = get_time();
 	await(shr->arg->time_to_eat);
 	shr->eat++;
+	pthread_mutex_unlock(shr->data_race);
 	pthread_mutex_unlock(shr->l_fork);
 	pthread_mutex_unlock(shr->r_fork);
 }

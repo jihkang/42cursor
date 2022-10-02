@@ -26,6 +26,7 @@ typedef struct	s_share
 	t_mtx	*l_fork;
 	t_mtx	*r_fork;
 	t_mtx	*print;
+	t_mtx	*data_race;
 	t_arg	*arg;
 	int		id;
 	int		state;
