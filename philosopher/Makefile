@@ -5,6 +5,10 @@ SRC_INC = src/
 HDR_INC = inc/
 
 CFLAG = -Wall -Wextra -Werror
+
+DFLAG = -fsanitize=thread
+HFLAG = -fsanitize=address
+
 SRC = main \
 	action \
 	argue \
@@ -21,6 +25,11 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAG) $(SRCS) -o $(NAME) -I$(HDR) -pthread
 
+thd	:
+	$(CC) $(CFLAG) $(DFLAG) $(SRCS) -o $(NAME) -I$(HDR) -pthread
+
+heap :
+	$(CC) $(CFLAG) $(HFLAG) $(SRCS) -o $(NAME) -I$(HDR) -pthread
 
 clean :
 	rm -f $(OBJS)
