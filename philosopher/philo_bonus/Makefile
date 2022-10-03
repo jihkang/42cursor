@@ -23,7 +23,7 @@ OBJS = $(addprefix $(SRC_INC), $(addsuffix .o, $(SRC)))
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAG) $(SRCS) -o $(NAME) -I$(HDR) -pthread
+	$(CC) $(CFLAG) $(SRCS) -o $(NAME) -I$(HDR) -lpthread
 
 thd	:
 	$(CC) $(CFLAG) $(DFLAG) $(SRCS) -o $(NAME) -I$(HDR) -pthread
