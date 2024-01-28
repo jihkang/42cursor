@@ -1,4 +1,3 @@
-
-
-*node_modules/**/*
+matcha-front/node_modules/**/*
 **node_modeules/**/*
+
