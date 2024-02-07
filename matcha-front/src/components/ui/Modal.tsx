@@ -18,15 +18,21 @@ const ModalContainer = styled.div<ModalProps>`
   min-width: 200px;
   min-height: 200px;
   border: 1px solid;
-  width: ${(props) => (props?.width ? props.width : 'fit-content')};
+  width: ${(props) => (props.width ? props.width : 'fit-content')};
   z-index: 100;
+  background: white;
+  @media screen and (max-width: 768px) {
+    max-width: 400px;
+  }
 `;
 
 export const ModalHeader = styled.div`
   display: flex;
   max-height: 80px;
   width: 100%;
+  min-height: 20px;
   height: fit-content;
+  line-height: fit-content;
   float: right;
   border-bottom: 1px solid;
   justify-content: space-between;
@@ -39,11 +45,16 @@ const ModalOverlay = styled.div`
   width: 100%;
   height: 100%;
   opacity: 0.5;
-
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(22, 220, 30, 0.3);
 `;
 
-export const ModalBody = styled.div``;
+export const ModalBody = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 100;
+`;
 
 const Modal: React.FC<ModalProps> = (props) => {
   const keyPress = (e: KeyboardEvent) => {
@@ -62,7 +73,7 @@ const Modal: React.FC<ModalProps> = (props) => {
   }, []);
   return (
     <ModalWrapper>
-      <ModalOverlay></ModalOverlay>
+      <ModalOverlay />
       <ModalContainer {...props}>{props.children}</ModalContainer>
     </ModalWrapper>
   );

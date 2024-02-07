@@ -1,5 +1,5 @@
-import Modal, { ModalBody, ModalHeader } from '@/components/Modal';
-import Input from '@/components/input';
+import Modal, { ModalBody, ModalHeader } from '@/components/ui/Modal';
+import Input from '@/components/ui/input';
 import { ModalContext } from '@/provider/ModalProvider';
 import debounce from '@/utils/debounce';
 import { useCallback, useContext, useState } from 'react';

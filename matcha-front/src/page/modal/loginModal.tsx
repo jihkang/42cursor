@@ -1,20 +1,24 @@
-import Modal, { ModalBody, ModalHeader } from '@/components/Modal';
+import Modal, { ModalBody, ModalHeader } from '@/components/ui/Modal';
 import { ModalContext } from '@/provider/ModalProvider';
 import { useContext } from 'react';
 import Login from '@/page/auth/login';
 
-const LoginModal = () => {
-  const value = useContext(ModalContext);
+interface ModalProviderProps {
+  setModal: (key: any) => void;
+  children: React.ReactNode;
+  header: string;
+  width?: string;
+}
+
+export const ModalChild: React.FC<ModalProviderProps> = ({ children, header, setModal }) => {
   return (
-    <Modal onToggle={() => value.setModal({ modalType: '', toggle: false })}>
+    <Modal width="600px" onToggle={() => setModal({ modalType: '', toggle: false })}>
       <ModalHeader>
-        <h2>Sign in</h2>
+        <h2>{header}</h2>
       </ModalHeader>
-      <ModalBody>
-        <Login />
-      </ModalBody>
+      <ModalBody>{children}</ModalBody>
     </Modal>
   );
 };
 
-export default LoginModal;
+export default ModalChild;

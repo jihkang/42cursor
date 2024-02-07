@@ -1,4 +1,4 @@
-import Form from '@/components/Form';
+import Form from '@/components/ui/Form';
 
 const ChangeProfile = () => {
   return <Form></Form>;

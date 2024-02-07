@@ -1,12 +1,10 @@
-import Card, { CardBody, CardFooter } from '@/components/Card';
+import Card, { CardBody, CardFooter } from '@/components/ui/Card';
+import Header from '@/components/ui/Header';
 
 const Main = () => {
   return (
     <>
-      <Card>
-        <CardBody>fefe</CardBody>
-        <CardFooter>hehe</CardFooter>
-      </Card>
+      <Header />
     </>
   );
 };

@@ -1,15 +1,17 @@
-import Button from '@/components/Button';
-import Form from '@/components/Form';
+import Button from '@/components/ui/Button';
+import Form from '@/components/ui/Form';
 import InputContainer from '@/components/InputContainer';
-import Label from '@/components/Label';
-import Input from '@/components/input';
+import Label from '@/components/ui/Label';
+import Input from '@/components/ui/input';
 import { userInfo } from '@/data/auth_data';
 import { ApiContainers } from '@/provider/ApiContainerProvider';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ModalContext } from '@/provider/ModalProvider';
 
 export default function Login() {
   const value = React.useContext(ApiContainers);
+  const modal = React.useContext(ModalContext);
 
   return (
     <Form
@@ -31,8 +33,14 @@ export default function Login() {
         {userInfo.map((item) => (
           <InputContainer {...item} key={`user_${item.id}`} />
         ))}
-        <Button type="submit">Login</Button>
-        <Link to="/register">Sign Up</Link>
+        <Button type="submit">Sign In</Button>
+        {modal.modalProp.modalType === 'loginModal' ? (
+          <Button onClick={() => modal.setModal({ modalType: 'signUpModal', toggle: true })}>
+            Sign Up
+          </Button>
+        ) : (
+          <Link to="/register">Sign Up</Link>
+        )}
       </div>
     </Form>
   );

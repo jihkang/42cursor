@@ -1,6 +1,6 @@
 import { InputContainerProps } from '@/types';
-import Label from './Label';
-import Input from './input';
+import Label from './ui/Label';
+import Input from './ui/input';
 
 const InputContainer: React.FC<InputContainerProps> = ({
   type,
