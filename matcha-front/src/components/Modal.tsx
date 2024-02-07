@@ -1,11 +1,6 @@
+import { ModalProps } from '@/types';
 import { useEffect } from 'react';
 import styled from 'styled-components';
-interface ModalProps {
-  width?: string;
-  height?: string;
-  children: React.ReactNode;
-  onToggle?: (props?: any) => void;
-}
 
 const ModalWrapper = styled.div`
   position: fixed;

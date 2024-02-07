@@ -10,6 +10,7 @@ interface InputProps {
   required?: boolean;
   type?: string;
   name?: string;
+  children?: React.ReactNode;
 }
 
 const InputContainer = styled.input<InputProps>`
