@@ -14,3 +14,5 @@ export const userInfo: InputContainerProps[] = [
     type: 'password',
   },
 ];
+
+export const userGender = ['male', 'female', 'other'];

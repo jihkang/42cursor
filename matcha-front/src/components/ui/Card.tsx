@@ -1,41 +1,38 @@
 import styled from 'styled-components';
 import React, { ReactNode } from 'react';
+import { CardProps } from '@/types';
 
-interface CardTypes {
-  [key: string]: ReactNode | string | undefined;
-  width?: string;
-  borderRadius?: string;
-  children?: ReactNode;
-}
+export const CardHeader = styled.div<CardProps>`
+  height: 60px;
+`;
+export const CardFooter = styled.div<CardProps>`
+  height: 60px;
+  padding: 10px 5px 10px 5px;
+`;
+export const CardBody = styled.div<CardProps>`
+  min-height: 300px;
+  height: fit-content;
+  padding: 10px 5px 10px 5px;
+  border-bottom: 1px solid;
+`;
 
-export const CardHeader = styled.div<CardTypes>``;
-export const CardFooter = styled.div<CardTypes>``;
-export const CardBody = styled.div<CardTypes>``;
-
-const CardComponents = styled.div<CardTypes>`
+const CardComponents = styled.div<CardProps>`
   display: flex;
   flex-direction: column;
-  width: ${(props) => props?.width};
+  width: ${({ width }) => (width ? width : '100%')};
   border-radius: ${(props) => props.borderRadius};
+  margin: -1px 0 0 -1px;
   border: 1px solid;
-  min-height: 400px;
-  min-width: 450px;
-  width: fit-content;
+  min-height: 420px;
+  min-width: 280px;
   height: fit-content;
-  ${CardBody} {
-    min-height: 300px;
-    height: fit-content;
-    padding: 10px 5px 10px 5px;
-    border-bottom: 1px solid;
-  }
-  ${CardFooter} {
-    justify-contents: center;
-    height: 60px;
-    padding: 10px 5px 10px 5px;
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    max-width: 100%;
   }
 `;
 
-const Card: React.FC<CardTypes> = ({ children, ...rest }) => {
+const Card: React.FC<CardProps> = ({ children, ...rest }) => {
   return <CardComponents {...rest}>{children}</CardComponents>;
 };
 

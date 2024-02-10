@@ -1,16 +1,14 @@
 import Button from '@/components/ui/Button';
 import Form from '@/components/ui/Form';
 import InputContainer from '@/components/InputContainer';
-import Label from '@/components/ui/Label';
-import Input from '@/components/ui/input';
-import { userInfo } from '@/data/auth_data';
+import { userInfo } from '@/data/AuthData';
 import { ApiContainers } from '@/provider/ApiContainerProvider';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ModalContext } from '@/provider/ModalProvider';
 
 export default function Login() {
-  const value = React.useContext(ApiContainers);
+  const api = React.useContext(ApiContainers);
   const modal = React.useContext(ModalContext);
 
   return (
@@ -22,7 +20,7 @@ export default function Login() {
         for (let [key, value] of data.entries()) {
           obj[key] = value;
         }
-        value.call('login', obj);
+        console.log(api.call('login', obj));
       }}
     >
       <div>

@@ -1,10 +1,10 @@
 import Card, { CardBody, CardFooter } from '@/components/ui/Card';
-import Header from '@/components/ui/Header';
+import Post from '@/components/Post';
 
 const Main = () => {
   return (
     <>
-      <Header />
+      <Post />
     </>
   );
 };

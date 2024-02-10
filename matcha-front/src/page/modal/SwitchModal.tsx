@@ -1,7 +1,4 @@
 import Modal, { ModalBody, ModalHeader } from '@/components/ui/Modal';
-import { ModalContext } from '@/provider/ModalProvider';
-import { useContext } from 'react';
-import Login from '@/page/auth/login';
 
 interface ModalProviderProps {
   setModal: (key: any) => void;

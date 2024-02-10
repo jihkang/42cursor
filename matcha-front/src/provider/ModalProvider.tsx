@@ -1,8 +1,7 @@
-import Modal, { ModalBody } from '@/components/ui/Modal';
-import Login from '@/page/auth/login';
-import Register from '@/page/auth/register';
+import Login from '@/page/auth/Login';
+import Register from '@/page/auth/Register';
 import SearchModal from '@/page/modal/SearchModal';
-import LoginModal, { ModalChild } from '@/page/modal/loginModal';
+import { ModalChild } from '@/page/modal/SwitchModal';
 import { ModalProps } from '@/types';
 import { createContext, useEffect, useState } from 'react';
 

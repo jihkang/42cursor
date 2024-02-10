@@ -20,7 +20,6 @@ const ModalContainer = styled.div<ModalProps>`
   border: 1px solid;
   width: ${(props) => (props.width ? props.width : 'fit-content')};
   z-index: 100;
-  background: white;
   @media screen and (max-width: 768px) {
     max-width: 400px;
   }
@@ -44,8 +43,7 @@ const ModalOverlay = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.5;
-  background-color: rgba(22, 220, 30, 0.3);
+  background-color: ${({ theme }) => theme.backgroundOpacity};
 `;
 
 export const ModalBody = styled.div`

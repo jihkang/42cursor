@@ -9,12 +9,6 @@ const InputContainer: React.FC<InputContainerProps> = ({
   required = false,
   placeholder = '',
 }) => {
-  /*
-		<div>
-      <Label htmlFor="email">Email</Label>
-      <Input name="email" id="email" placeholder="m@example.com" required type="email" />
-    </div>
-	*/
   return (
     <div>
       <Label htmlFor={name}>{name}</Label>

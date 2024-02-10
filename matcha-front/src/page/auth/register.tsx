@@ -1,7 +1,7 @@
 import Button from '@/components/ui/Button';
 import Form from '@/components/ui/Form';
 import InputContainer from '@/components/InputContainer';
-import { userInfo } from '@/data/auth_data';
+import { userInfo } from '@/data/AuthData';
 import { ModalContext } from '@/provider/ModalProvider';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
