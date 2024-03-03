@@ -1,22 +1,26 @@
 #include <iostream>
+
 #define ENDL "\n"
 
 using namespace std;
 
-int solve(int x, int y, int prev) {
-  long long result = (101 * x * y + x * x) / (100 * x - y);
+long long solve(long long x, long long y, long long z) {
+  long long child = (z * x + x - 100 * y);
+  long long parent = 99 - z;
+  long long alpha = ((z * x) + x - (100 * y)) / (99 - z);
 
-  return result;
+  if (child % parent != 0)
+    return alpha + 1;
+  return alpha;
 }
 
 int main() {
-
-  int x, y;
+  long long x, y;
   cin >> x >> y;
-  int prev = int((double)(y) / x * 100);
+  long long prev = y * 100 / x;
 
   if (prev >= 99) {
-    cout << -1 << '\n';
+    cout << -1 << ENDL;
     return 0;
   }
   cout << solve(x, y, prev) << ENDL;
