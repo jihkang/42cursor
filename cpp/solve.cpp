@@ -1,71 +1,23 @@
-#include <algorithm>
-#include <iomanip>
 #include <iostream>
+#define ENDL "\n"
 
 using namespace std;
 
-int dx[4] = {0, -1, 0, 1};
-int dy[4] = {1, 0, -1, 0};
-
-int arr[51][6];
-void change_direction(int &dir) { dir = (dir + 1) % 4; }
-
-void move(int n, int m, int r, int c) {
-  int dir = 0;
-  int cnt = 1;
-  int prev = 0;
-  int x, y;
-  x = y = 0;
-  arr[x][y] = cnt;
-  if (x >= n && x <= r && y >= m && y <= c) {
-    arr[x - n][y - m] = cnt;
-  }
-  while (true) {
-    if (x < -50 || y < -50 || x > 50 || y > 50)
-      break;
-    for (int j = 0; j < 2; ++j) {
-      for (int i = 0; i <= prev; ++i) {
-        x = x + dx[dir];
-        y = y + dy[dir];
-        ++cnt;
-        if (x >= n && x <= r && y >= m && y <= c) {
-          arr[x - n][y - m] = cnt;
-        }
-      }
-      change_direction(dir);
-    }
-    prev++;
-  }
-}
-
-int check_line(int x, int cnt) {
-  if (x > 0) {
-    return check_line(x / 10, ++cnt);
-  }
-  return cnt;
+int solve(int x, int y, int prev) {
+  long long result = (101 * x * y + x * x) / (100 * x - y);
+  return result;
 }
 
 int main() {
-  int n, m, r, c;
-  cin >> n >> m >> r >> c;
-  move(n, m, r, c);
-  int _max = 0;
-  for (int k = 0; k < 2; ++k) {
-    for (int i = 0; i <= r - n; ++i) {
-      for (int j = 0; j <= c - m; ++j) {
-        if (k == 0) {
-          int prefix = check_line(arr[i][j], 0);
-          if (prefix > _max) {
-            _max = prefix;
-          }
-        } else {
-          cout << setw(_max) << arr[i][j] << " ";
-        }
-      }
-      if (k == 1) {
-        cout << '\n';
-      }
-    }
+
+  int x, y;
+  cin >> x >> y;
+  int prev = int((double)(y) / x * 100);
+
+  if (prev >= 99) {
+    cout << -1 << '\n';
+    return 0;
   }
+  cout << solve(x, y, prev) << ENDL;
   return 0;
 }
