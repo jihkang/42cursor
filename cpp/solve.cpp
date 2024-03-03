@@ -5,6 +5,7 @@ using namespace std;
 
 int solve(int x, int y, int prev) {
   long long result = (101 * x * y + x * x) / (100 * x - y);
+
   return result;
 }
 
