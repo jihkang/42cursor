@@ -1,10 +1,11 @@
-VOLUME_DIR	:=	/Users/gangjiho/data
+VOLUME_DIR	:=	/home/test/
 DOCKER_COMPOSE	:=	docker-compose
-DOCKER_COMPOSE_FILE	:=	./srcs/docker-compose.yml
+
+DOCKER_COMPOSE_FILE	:=	/home/test/Desktop/inception-fuck/srcs/docker-compose.yml
 PROJECT_NAME	:=	Inception
 NETWORK_NAME := network-inception
 
-.PHONY:	all
+.PHONY:
 all:
 	@mkdir -p $(VOLUME_DIR)/db
 	@mkdir -p $(VOLUME_DIR)/wp

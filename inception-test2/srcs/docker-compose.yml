@@ -46,16 +46,17 @@ volumes:
     name: db_data
     driver: local
     driver_opts:
-      device: /Users/gangjiho/data/db
+      device: /home/test/db
       type: none
       o: bind
   db_wp:
     name: db_wp
     driver: local
     driver_opts:
-      device: /Users/gangjiho/data/wp
+      device: /home/test/wp
       type: none
       o: bind
+      
 
 networks:
   intra:

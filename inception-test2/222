@@ -1,0 +1,58 @@
+NAME	= inception
+
+COMPOSEFILE = ./srcs/docker-compose.yml
+COMPOSEENV = ./srcs/.env
+DATA_DB = /Users/gangjiho/Downloads/data/db_data 
+DATA_WP = /Users/gangjiho/Downloads/data/wp_data
+# DATA_DIRS = $(DATA_DB) $(DATA_WP)
+VOLUME_DIR = /Users/gangjiho/test
+
+all		: $(NAME)
+	@mkdir -p $(VOLUME_DIR)/db
+	@mkdir -p $(VOLUME_DIR)/wp
+
+$(NAME) : $(DATA_DIRS)
+	sudo docker compose --env-file $(COMPOSEENV) -f $(COMPOSEFILE)  up --build --detach 
+
+$(DATA_DIRS) :
+	sudo mkdir -p $(DATA_DIRS)
+clean :
+	sudo docker compose -f $(COMPOSEFILE) down --rmi all --remove-orphans -v
+
+ps		: 
+	sudo docker compose -f  $(COMPOSEFILE) ps -a
+
+fclean : clean
+	sudo rm -rf $(DATA_DIRS)
+	sudo docker system prune --volumes --all --force
+
+
+
+db :
+	sudo docker compose -f $(COMPOSEFILE) exec mariadb /bin/bash
+ng :
+	sudo docker compose -f $(COMPOSEFILE) exec nginx /bin/bash
+wp :
+	sudo docker compose -f $(COMPOSEFILE) exec wordpress /bin/bash
+
+logs :
+	sudo docker compose -f $(COMPOSEFILE) logs
+logs_db :
+	sudo docker compose -f $(COMPOSEFILE) logs mariadb
+logs_wp :
+	sudo docker compose -f $(COMPOSEFILE) logs wordpress
+logs_ng :
+	sudo docker compose -f $(COMPOSEFILE) logs nginx
+
+
+rmdb :
+	sudo docker compose -f $(COMPOSEFILE) down
+	sudo docker volume remove srcs_data-db
+	sudo docker volume remove srcs_data-wp
+	sudo rm -rf $(DATA_DIRS)
+	sudo docker system prune
+
+re : rmdb all
+
+
+.PHONY	:	all remove ps
