@@ -5,27 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc69b8e0-82bc-4886-87fd-613f73c6a634" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/python.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1015.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1064.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1259.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1541.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/15961.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/input" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/input" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/output" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/output" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/result" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/result" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/solve" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/solve" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/solve.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/solve.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/solve.dSYM/Contents/Resources/DWARF/solve" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/solve.dSYM/Contents/Resources/DWARF/solve" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cpp/solve.dSYM/Contents/Resources/Relocations/aarch64/solve.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp/solve.dSYM/Contents/Resources/Relocations/aarch64/solve.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../irc_git/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inception-test2/init.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../inception-test2/init.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +130,7 @@
       <workItem from="1715487176175" duration="18210000" />
       <workItem from="1715648089655" duration="16175000" />
       <workItem from="1716017333838" duration="3661000" />
-      <workItem from="1716023177118" duration="4559000" />
+      <workItem from="1716023177118" duration="10188000" />
     </task>
     <servers />
   </component>
