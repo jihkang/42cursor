@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc69b8e0-82bc-4886-87fd-613f73c6a634" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../inception-test2/init.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../inception-test2/init.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,6 +130,8 @@
       <workItem from="1715648089655" duration="16175000" />
       <workItem from="1716017333838" duration="3661000" />
       <workItem from="1716023177118" duration="10188000" />
+      <workItem from="1717568835058" duration="36000" />
+      <workItem from="1717568877980" duration="31000" />
     </task>
     <servers />
   </component>

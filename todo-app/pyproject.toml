@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "todo-app"
+version = "0.1.0"
+description = ""
+authors = ["jihkang <106561135+jihkang@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "todo_app"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pydantic = "^2.7.3"
+sqlalchemy = "^2.0.30"
+alembic = "^1.13.1"
+python-jose = "^3.3.0"
+passlib = "^1.7.4"
+
+[tool.poetry.group.dev.dependencies]
+fastapi = "^0.111.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
